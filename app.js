@@ -40,10 +40,10 @@ function reset() {
   const interval = setInterval(() => {
     x++;
     console.log(x)
-    if (x > 3) {
+    if (x > 2) {
       alert.classList.remove('right');
 
-    } if (x > 4) {
+    } if (x > 3) {
       alert.classList.remove('animation');
       clearInterval(interval);
       x = 0;
