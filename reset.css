@@ -34,6 +34,7 @@ body {
   line-height: 1;
   background: #797979;
   font-family: 'Mulish', sans-serif;
+  overflow-x: hidden;
 }
 
 ol, ul {

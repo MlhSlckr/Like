@@ -1,18 +1,50 @@
 @import url("reset.css");
 
-.container {
+.main {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
   width: 100%;
-  font-size: 100px;
   transition: 300ms all;
+  position: relative;
+}
 
-  .like {
-    margin-right: 50px;
-    cursor: pointer;
+.like {
+  margin-right: 50px;
+  cursor: pointer;
+  font-size: 100px;
+}
+.count {
+  font-size: 100px;
+}
+.alert {
+  position: absolute;
+  bottom: 5%;
+  padding: 16px 24px;
+  background-color: rgb(49, 49, 49);
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  right: -100%;
+  transition: 300ms all;
+}
+
+.animation {
+  animation: alert 1s linear both;
+}
+
+@keyframes alert {
+  0% {
+    transform: translateY(0);
   }
+  100% {
+    transform: translateY(-100px);
+  }
+}
+
+.right {
+  right: 1%;
 }
 
 .liked {
@@ -36,9 +68,10 @@
     justify-content: center;
     flex-direction: column;
     width: 370px;
-    height: 170px;
+    height: 150px;
     background-color: #fff;
     position: relative;
+    border-radius: 5px;
     .text {
       display: flex;
       align-items: center;
@@ -55,7 +88,7 @@
       color: #ff0000;
     }
     .sıfırla {
-      margin-top: 20px;
+      margin-top: 30px;
       background-color: rgb(65, 105, 225);
       padding: 10px 20px;
       cursor: pointer;

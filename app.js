@@ -1,22 +1,22 @@
 const like = document.querySelector('.like');
 const heart = document.querySelector('.heart');
-const container = document.querySelector('.container')
+const main = document.querySelector('.main')
 const popup = document.querySelector('.popup');
 const far = document.querySelector('.far');
 const sıfırla = document.querySelector('.sıfırla');
-
+const alert = document.querySelector('.alert');
 
 let sayma = document.querySelector('.count');
 
 let count = 0;
 
 like.addEventListener('click', () => {
-  if (container.classList.contains('liked')) {
+  if (main.classList.contains('liked')) {
     popup.classList.add('block');
   } else {
     count++;
     sayma.innerHTML = count;
-    container.classList.add('liked');
+    main.classList.add('liked');
   }
 })
 
@@ -28,9 +28,30 @@ sıfırla.addEventListener('click', () => {
   reset();
 })
 
+let x = 0;
+
 function reset() {
   count--;
   sayma.innerHTML = count;
-  container.classList.remove('liked');
+  main.classList.remove('liked');
   popup.classList.remove('block');
+  alert.classList.add('right');
+  alert.classList.add('animation');
+  const interval = setInterval(() => {
+    x++;
+    console.log(x)
+    if (x > 3) {
+      alert.classList.remove('right');
+
+    } if (x > 4) {
+      alert.classList.remove('animation');
+      clearInterval(interval);
+      x = 0;
+    }
+  }, 1000);
 }
+
+alert.addEventListener('click', () => {
+  alert.classList.remove('animation');
+  alert.classList.remove('right');
+})
