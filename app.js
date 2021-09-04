@@ -17,8 +17,15 @@ like.addEventListener('click', () => {
     count++;
     sayma.innerHTML = count;
     main.classList.add('liked');
+    localStorage.setItem('mode', main.classList);
   }
 })
+
+if (localStorage.getItem('mode') == ('main liked')) {
+  main.classList.add('liked')
+  count++;
+  sayma.innerHTML = count;
+}
 
 far.addEventListener('click', () => {
   popup.classList.remove('block');
@@ -37,9 +44,9 @@ function reset() {
   popup.classList.remove('block');
   alert.classList.add('right');
   alert.classList.add('animation');
+  localStorage.clear();
   const interval = setInterval(() => {
     x++;
-    console.log(x)
     if (x > 2) {
       alert.classList.remove('right');
 
