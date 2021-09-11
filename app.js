@@ -21,7 +21,7 @@ like.addEventListener('click', () => {
   }
 })
 
-if (localStorage.getItem('mode') == ('main liked')) {
+if (localStorage.mode) {
   main.classList.add('liked')
   count++;
   sayma.innerHTML = count;
